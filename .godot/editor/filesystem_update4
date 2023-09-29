@@ -1,0 +1,6 @@
+res://Enemies/bat.tscn
+res://Shaders/whiteColor.gdshader
+res://World/world.tscn
+res://World/camera.tscn
+res://Player/player.tscn
+res://Enemies/enemy.tscn

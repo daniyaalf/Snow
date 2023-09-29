@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d361aem30le0h"]
+
+[ext_resource type="PackedScene" uid="uid://bx1b2k65y80xw" path="res://Enemies/enemy.tscn" id="1_3ctnl"]
+[ext_resource type="Shader" path="res://Shaders/whiteColor.gdshader" id="2_aqcaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_df74b"]
+resource_local_to_scene = true
+shader = ExtResource("2_aqcaa")
+shader_parameter/active = true
+
+[node name="Enemy" instance=ExtResource("1_3ctnl")]
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_df74b")
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]
+[editable path="WanderController"]
