@@ -9,11 +9,11 @@ GrassEffect.png::CompressedTexture2D::4305379471404194090::1696283185::169628318
 grass_effect.tscn::PackedScene::2816989087559091073::1696283185::0::1::::<><>::res://Effects/effect.gd<>uid://b2ls8alc23b51
 HitEffect.png::CompressedTexture2D::7945202714470911785::1696283185::1696283185::1::::<><>::
 hit_effect.tscn::PackedScene::7988119270136388927::1696283185::0::1::::<><>::uid://dlgylfby3dds8
-::res://Enemies/::1696357523
+::res://Enemies/::1696359275
 Bat.png::CompressedTexture2D::8824789339983695547::1696283185::1696283185::1::::<><>::
-bat.tscn::PackedScene::2429427362866869548::1696357523::0::1::::<><>::res://Enemies/old_bat.gd<>uid://dxy18xywhdky2::::res://Enemies/Bat.png<>res://Shaders/whiteColor.gdshader<>uid://86n27gb30ls6::::res://Shadows/SmallShadow.png<>uid://dih7ugq16tyal::::res://Overlap/hurtbox.tscn<>uid://b7rmj3l2f2587::::res://Stats/stats.tscn<>uid://2xm7dul65me0::::res://Enemies/player_detection_zone.tscn<>uid://cmcldsch5tbxj::::res://Overlap/hitbox.tscn<>uid://b267nkcyoidg6::::res://Overlap/soft_collision.tscn<>uid://d15estedv21ca::::res://Enemies/wander_controller.tscn
+bat.tscn::PackedScene::2429427362866869548::1696359275::0::1::::<><>::res://Enemies/old_bat.gd<>uid://dxy18xywhdky2::::res://Enemies/Bat.png<>res://Shaders/whiteColor.gdshader<>uid://86n27gb30ls6::::res://Shadows/SmallShadow.png<>uid://dih7ugq16tyal::::res://Overlap/hurtbox.tscn<>uid://b7rmj3l2f2587::::res://Stats/stats.tscn<>uid://2xm7dul65me0::::res://Enemies/player_detection_zone.tscn<>uid://cmcldsch5tbxj::::res://Overlap/hitbox.tscn<>uid://b267nkcyoidg6::::res://Overlap/soft_collision.tscn<>uid://d15estedv21ca::::res://Enemies/wander_controller.tscn
 enemy.gd::GDScript::-1::1696283185::0::1::::Enemy<>CharacterBody2D<>::
-enemy.tscn::PackedScene::1793245977471677673::1696357523::0::1::::<><>::res://Enemies/Alternative/alternative_enemy.gd<>res://Shaders/whiteColor.gdshader<>uid://dih7ugq16tyal::::res://Overlap/hurtbox.tscn<>uid://b7rmj3l2f2587::::res://Stats/stats.tscn<>uid://2xm7dul65me0::::res://Enemies/player_detection_zone.tscn<>uid://cmcldsch5tbxj::::res://Overlap/hitbox.tscn<>uid://b267nkcyoidg6::::res://Overlap/soft_collision.tscn<>uid://d15estedv21ca::::res://Enemies/wander_controller.tscn
+enemy.tscn::PackedScene::1793245977471677673::1696359275::0::1::::<><>::res://Enemies/Alternative/alternative_enemy.gd<>res://Shaders/whiteColor.gdshader<>uid://dih7ugq16tyal::::res://Overlap/hurtbox.tscn<>uid://b7rmj3l2f2587::::res://Stats/stats.tscn<>uid://2xm7dul65me0::::res://Enemies/player_detection_zone.tscn<>uid://cmcldsch5tbxj::::res://Overlap/hitbox.tscn<>uid://b267nkcyoidg6::::res://Overlap/soft_collision.tscn<>uid://d15estedv21ca::::res://Enemies/wander_controller.tscn
 old_bat.gd::GDScript::-1::1696354084::0::1::::<>CharacterBody2D<>::
 player_detection_zone.gd::GDScript::-1::1696283185::0::1::::<>Area2D<>::
 player_detection_zone.tscn::PackedScene::1943365404896951441::1696283185::0::1::::<><>::res://Enemies/player_detection_zone.gd
@@ -43,15 +43,15 @@ hurtbox.gd::GDScript::-1::1696283185::0::1::::<>Area2D<>::
 hurtbox.tscn::PackedScene::7737202445189098931::1696283185::0::1::::<><>::res://Overlap/hurtbox.gd
 SoftCollision.gd::GDScript::-1::1696283185::0::1::::<>Area2D<>::
 soft_collision.tscn::PackedScene::4347481860817706263::1696283185::0::1::::<><>::res://Overlap/SoftCollision.gd
-::res://Player/::1696357523
+::res://Player/::1696359274
 Light.png::CompressedTexture2D::258885814418852636::1696283185::1696283185::1::::<><>::
 player.gd::GDScript::-1::1696283185::0::1::::<>CharacterBody2D<>::
 Player.png::CompressedTexture2D::5908658685894933416::1696283185::1696283185::1::::<><>::
-player.tscn::PackedScene::5678569466271861427::1696357523::0::1::::<><>::res://Player/player.gd<>res://Shaders/whiteColor.gdshader<>uid://cmcldsch5tbxj::::res://Overlap/hitbox.tscn<>uid://cl7kelt6e0aqq::::res://Music and Sounds/Swipe.wav<>uid://bnqvy4t3sk6jx::::res://Player/snowman.png<>uid://caq6vc85wwpyh::::res://Music and Sounds/Evade.wav<>res://Player/swordHitbox.gd<>uid://dih7ugq16tyal::::res://Overlap/hurtbox.tscn<>uid://ck3hfdtno7v8p::::res://Shadows/MediumShadow.png
+player.tscn::PackedScene::5678569466271861427::1696359274::0::1::::<><>::res://Player/player.gd<>res://Shaders/whiteColor.gdshader<>uid://cmcldsch5tbxj::::res://Overlap/hitbox.tscn<>uid://cl7kelt6e0aqq::::res://Music and Sounds/Swipe.wav<>uid://bnqvy4t3sk6jx::::res://Player/snowman.png<>uid://caq6vc85wwpyh::::res://Music and Sounds/Evade.wav<>res://Player/swordHitbox.gd<>uid://dih7ugq16tyal::::res://Overlap/hurtbox.tscn<>uid://ck3hfdtno7v8p::::res://Shadows/MediumShadow.png
 PlayerHurtSound.gd::GDScript::-1::1696283185::0::1::::<>AudioStreamPlayer<>::
 player_hurt_sound.tscn::PackedScene::1820962587222823174::1696283185::0::1::::<><>::uid://6x2c7td1pbsy
 player_stats.tscn::PackedScene::4868741579405547901::1696283185::0::1::::<><>::uid://b7rmj3l2f2587
-snowman.png::CompressedTexture2D::3333225164779404917::1696353517::1696353531::1::::<><>::
+snowman.png::CompressedTexture2D::3333225164779404917::1696359456::1696359458::1::::<><>::
 swordHitbox.gd::GDScript::-1::1696283185::0::1::::<>Area2D<>::
 ::res://Shaders/::1696283320
 whiteColor.gdshader::Shader::-1::1696283320::0::1::::<><>::
@@ -72,11 +72,11 @@ health_ui.gd::GDScript::-1::1696283185::0::1::::<>Control<>::
 health_ui.tscn::PackedScene::3531924159716517637::1696283185::0::1::::<><>::res://UI/health_ui.gd<>uid://kkwkvme64qmw
 HeartUIEmpty.png::CompressedTexture2D::723886967453165638::1696283185::1696283185::1::::<><>::
 HeartUIFull.png::CompressedTexture2D::4071489163052567143::1696283185::1696283185::1::::<><>::
-::res://World/::1696357557
+::res://World/::1696359274
 Bush.png::CompressedTexture2D::8042701736048677651::1696283185::1696283185::1::::<><>::
 bush.tscn::PackedScene::7844374102569178645::1696283185::0::1::::<><>::uid://dmt7efwjwx4db
 camera.gd::GDScript::-1::1696283185::0::1::::<>Camera2D<>::
-camera.tscn::PackedScene::6445470082972453086::1696357523::0::1::::<><>::res://World/camera.gd
+camera.tscn::PackedScene::6445470082972453086::1696359274::0::1::::<><>::res://World/camera.gd
 CliffTileset.png::CompressedTexture2D::2631035463724935049::1696283185::1696283185::1::::<><>::
 day_night_cycle.gd::GDScript::-1::1696283185::0::1::::<>CanvasModulate<>::
 DirtTileset.png::CompressedTexture2D::4057823007917277851::1696283185::1696283185::1::::<><>::
@@ -89,4 +89,4 @@ SnowBackground.png::CompressedTexture2D::8111861684318241169::1696354562::169635
 Tree.png::CompressedTexture2D::7067244138714854238::1696283185::1696283185::1::::<><>::
 tree.tscn::PackedScene::9161894226518493319::1696283185::0::1::::<><>::uid://c7xoqjcdxf38u
 world.gd::GDScript::-1::1696283185::0::1::::<>Node2D<>::
-world.tscn::PackedScene::1774638806746456573::1696357523::0::1::::<><>::res://World/world.gd<>uid://cx3h7k4jbk3mw::::res://World/camera.tscn<>uid://dntpgamjl5dyv::::res://World/SnowBackground.png<>uid://bu6vxtl16fl8f::::res://World/IceTileset.png<>uid://bdqq1f03nomgn::::res://World/CliffTileset.png<>uid://cm50heevdfmal::::res://Player/player.tscn<>uid://dxn2ue03lywy::::res://Player/Light.png<>uid://dj04xv4xiq4s4::::res://World/bush.tscn<>uid://bescxd2h5qmvn::::res://World/grass.tscn<>uid://bau3kwws4b2x1::::res://Enemies/bat.tscn<>uid://d3sdcaul4l4tf::::res://World/tree.tscn<>uid://bqk5jl1jlt126::::res://UI/health_ui.tscn<>uid://btjafg3w30poj::::res://Music and Sounds/Forest.wav<>res://World/day_night_cycle.gd
+world.tscn::PackedScene::1774638806746456573::1696359274::0::1::::<><>::res://World/world.gd<>uid://cx3h7k4jbk3mw::::res://World/camera.tscn<>uid://dntpgamjl5dyv::::res://World/SnowBackground.png<>uid://bu6vxtl16fl8f::::res://World/IceTileset.png<>uid://bdqq1f03nomgn::::res://World/CliffTileset.png<>uid://cm50heevdfmal::::res://Player/player.tscn<>uid://dxn2ue03lywy::::res://Player/Light.png<>uid://dj04xv4xiq4s4::::res://World/bush.tscn<>uid://bescxd2h5qmvn::::res://World/grass.tscn<>uid://bau3kwws4b2x1::::res://Enemies/bat.tscn<>uid://d3sdcaul4l4tf::::res://World/tree.tscn<>uid://bqk5jl1jlt126::::res://UI/health_ui.tscn<>uid://btjafg3w30poj::::res://Music and Sounds/Forest.wav<>res://World/day_night_cycle.gd
