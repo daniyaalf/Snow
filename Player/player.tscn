@@ -1,10 +1,10 @@
-[gd_scene load_steps=65 format=3 uid="uid://cm50heevdfmal"]
+[gd_scene load_steps=64 format=3 uid="uid://cm50heevdfmal"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3rk3w"]
-[ext_resource type="Texture2D" uid="uid://cqgg0ls584asm" path="res://Player/Player.png" id="2_ie7h3"]
 [ext_resource type="Shader" path="res://Shaders/whiteColor.gdshader" id="2_mbqxm"]
 [ext_resource type="PackedScene" uid="uid://cmcldsch5tbxj" path="res://Overlap/hitbox.tscn" id="3_2imej"]
 [ext_resource type="AudioStream" uid="uid://cl7kelt6e0aqq" path="res://Music and Sounds/Swipe.wav" id="3_atpmj"]
+[ext_resource type="Texture2D" uid="uid://bnqvy4t3sk6jx" path="res://Player/snowman.png" id="3_uubag"]
 [ext_resource type="AudioStream" uid="uid://caq6vc85wwpyh" path="res://Music and Sounds/Evade.wav" id="4_etuac"]
 [ext_resource type="Script" path="res://Player/swordHitbox.gd" id="4_jkdjt"]
 [ext_resource type="PackedScene" uid="uid://dih7ugq16tyal" path="res://Overlap/hurtbox.tscn" id="5_oelr3"]
@@ -819,8 +819,6 @@ states/Start/position = Vector2(165, 110)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_qos18"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_yvl8y"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_ikwum"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_85kg1"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_bt1yi"), "Roll", "Idle", SubResource("AnimationNodeStateMachineTransition_bpf58"), "Idle", "Roll", SubResource("AnimationNodeStateMachineTransition_m1g6k")]
 graph_offset = Vector2(-244.836, 0)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_2jhqs"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y6faf"]
 height = 28.0
 
@@ -892,7 +890,7 @@ metadata/_edit_horizontal_guides_ = [-51.0]
 z_index = 1
 material = SubResource("ShaderMaterial_qc6ld")
 position = Vector2(0, -9)
-texture = ExtResource("2_ie7h3")
+texture = ExtResource("3_uubag")
 hframes = 60
 frame = 36
 
@@ -908,7 +906,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_acgne")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_2jhqs")
 parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Roll/blend_position = Vector2(0, 0)

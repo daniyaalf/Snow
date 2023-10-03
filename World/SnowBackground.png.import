@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b77solxbv4cc1"
-path="res://.godot/imported/GrassBackground.png-97f32375e80ccfc9d4addd18e4430882.ctex"
+uid="uid://dntpgamjl5dyv"
+path="res://.godot/imported/SnowBackground.png-766557b3632c6232293eaa8b00d4b9a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/GrassBackground.png"
-dest_files=["res://.godot/imported/GrassBackground.png-97f32375e80ccfc9d4addd18e4430882.ctex"]
+source_file="res://World/SnowBackground.png"
+dest_files=["res://.godot/imported/SnowBackground.png-766557b3632c6232293eaa8b00d4b9a2.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -1,6 +1,7 @@
-res://Enemies/bat.tscn
-res://Shaders/whiteColor.gdshader
 res://World/world.tscn
+res://Shaders/whiteColor.gdshader
 res://World/camera.tscn
 res://Player/player.tscn
 res://Enemies/enemy.tscn
+res://Enemies/bat.tscn
+res://Enemies/old_bat.gd
