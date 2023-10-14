@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://cc6hlrago5xjg"]
+[gd_scene load_steps=27 format=3 uid="uid://bau3kwws4b2x1"]
 
 [ext_resource type="Script" path="res://Enemies/old_bat.gd" id="1_dgfpy"]
 [ext_resource type="Shader" path="res://Shaders/whiteColor.gdshader" id="2_b8rvw"]
 [ext_resource type="Texture2D" uid="uid://86n27gb30ls6" path="res://Shadows/SmallShadow.png" id="2_u7tow"]
 [ext_resource type="PackedScene" uid="uid://dih7ugq16tyal" path="res://Overlap/hurtbox.tscn" id="3_amhpv"]
-[ext_resource type="Texture2D" uid="uid://dxy18xywhdky2" path="res://Enemies/Bat.png" id="3_rvs7s"]
+[ext_resource type="Texture2D" uid="uid://dmb5dkwolie0o" path="res://Enemies/Bateye.png" id="3_hokq3"]
 [ext_resource type="PackedScene" uid="uid://b7rmj3l2f2587" path="res://Stats/stats.tscn" id="5_7evxt"]
 [ext_resource type="PackedScene" uid="uid://2xm7dul65me0" path="res://Enemies/player_detection_zone.tscn" id="6_ceb60"]
 [ext_resource type="PackedScene" uid="uid://cmcldsch5tbxj" path="res://Overlap/hitbox.tscn" id="7_oo3ki"]
@@ -16,43 +16,43 @@ resource_local_to_scene = true
 shader = ExtResource("2_b8rvw")
 shader_parameter/active = false
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_weu4j"]
-atlas = ExtResource("3_rvs7s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_h561q"]
+atlas = ExtResource("3_hokq3")
 region = Rect2(0, 0, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgr1h"]
-atlas = ExtResource("3_rvs7s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7c1l"]
+atlas = ExtResource("3_hokq3")
 region = Rect2(16, 0, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ksggl"]
-atlas = ExtResource("3_rvs7s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktc7m"]
+atlas = ExtResource("3_hokq3")
 region = Rect2(32, 0, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gtjdd"]
-atlas = ExtResource("3_rvs7s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g252v"]
+atlas = ExtResource("3_hokq3")
 region = Rect2(48, 0, 16, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idqwc"]
-atlas = ExtResource("3_rvs7s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojoan"]
+atlas = ExtResource("3_hokq3")
 region = Rect2(64, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q74qu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_weu4j")
+"texture": SubResource("AtlasTexture_h561q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dgr1h")
+"texture": SubResource("AtlasTexture_b7c1l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ksggl")
+"texture": SubResource("AtlasTexture_ktc7m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gtjdd")
+"texture": SubResource("AtlasTexture_g252v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_idqwc")
+"texture": SubResource("AtlasTexture_ojoan")
 }],
 "loop": true,
 "name": &"Fly",

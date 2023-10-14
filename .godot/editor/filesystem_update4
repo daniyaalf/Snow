@@ -1,7 +1,10 @@
 res://World/world.tscn
+res://World/reflection.gdshader
 res://Shaders/whiteColor.gdshader
+res://World/visualsnow.gdshader
 res://World/camera.tscn
 res://Player/player.tscn
 res://Enemies/enemy.tscn
 res://Enemies/bat.tscn
-res://Enemies/old_bat.gd
+res://Player/player_stats.tscn
+res://Enemies/bateye.tscn

@@ -1,6 +1,7 @@
-TextureRect
-StaticBody2D
 CollisionShape2D
+StaticBody2D
+ColorRect
+TextureRect
 PointLight2D
 DirectionalLight2D
 RemoteTransform2D
