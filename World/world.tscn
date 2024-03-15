@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://0jwbonvid06d"]
+[gd_scene load_steps=27 format=3 uid="uid://0jwbonvid06d"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_7im2k"]
 [ext_resource type="PackedScene" uid="uid://cx3h7k4jbk3mw" path="res://World/camera.tscn" id="2_10pvd"]
@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://bau3kwws4b2x1" path="res://Enemies/bateye.tscn" id="10_pbtbx"]
 [ext_resource type="PackedScene" uid="uid://d3sdcaul4l4tf" path="res://World/tree.tscn" id="11_7ladt"]
 [ext_resource type="PackedScene" uid="uid://bqk5jl1jlt126" path="res://UI/health_ui.tscn" id="12_mbc7s"]
-[ext_resource type="AudioStream" uid="uid://btjafg3w30poj" path="res://Music and Sounds/Forest.wav" id="13_82ijx"]
+[ext_resource type="Script" path="res://UI/time_panel.gd" id="14_45mn8"]
 [ext_resource type="Script" path="res://World/day_night_cycle.gd" id="14_xc810"]
-[ext_resource type="Shader" path="res://World/visualsnow.gdshader" id="16_gib3h"]
+[ext_resource type="AudioStream" uid="uid://54gn07gutb60" path="res://Music and Sounds/Fantasy A.wav" id="15_e66do"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_34jrr"]
 shader = ExtResource("4_uvi2e")
@@ -862,9 +862,19 @@ terrain_set_0/terrain_0/name = "Cliff"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_3hbfc")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdaxo"]
-shader = ExtResource("16_gib3h")
-shader_parameter/amount = 40.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etkse"]
+
+[sub_resource type="GDScript" id="GDScript_0u1sp"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	add_theme_font_size_override(\"font_size\", 10)
+	
+	pass # Replace with function body.
+"
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_04g76"]
 a = Vector2(9.15527e-05, 40)
@@ -1115,22 +1125,50 @@ offset_top = 1.0
 offset_right = 62.0
 offset_bottom = 12.0
 
+[node name="TimePanel" type="Panel" parent="CanvasLayer"]
+offset_left = 240.0
+offset_right = 320.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_etkse")
+script = ExtResource("14_45mn8")
+
+[node name="Minutes" type="Label" parent="CanvasLayer/TimePanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 48.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "00"
+script = SubResource("GDScript_0u1sp")
+
+[node name="Seconds" type="Label" parent="CanvasLayer/TimePanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 64.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "00:"
+script = SubResource("GDScript_0u1sp")
+
+[node name="Msecs" type="Label" parent="CanvasLayer/TimePanel"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 80.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "00"
+script = SubResource("GDScript_0u1sp")
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_82ijx")
+stream = ExtResource("15_e66do")
 volume_db = 10.0
 autoplay = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="DayNight" type="CanvasModulate" parent="."]
 script = ExtResource("14_xc810")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = 3
-material = SubResource("ShaderMaterial_hdaxo")
-offset_left = -368.0
-offset_top = -208.0
-offset_right = 704.0
-offset_bottom = 368.0
 
 [node name="TopRightBorder" type="StaticBody2D" parent="."]
 

@@ -35,6 +35,7 @@ enum {
 @onready var swordHitbox = $HitboxPivot/SwordHitbox
 @onready var hurtbox = $Hurtbox
 @onready var blinkAnimationPlayer = $BlinkAnimationPlayer
+# @onready var timer = $TimePanel
 
 # NOTE: velocity is a built-in variable; Vector2.ZERO by default
 
@@ -47,6 +48,7 @@ var stats = PlayerStats
 func _ready():
 	# Remove the player from the world if they have no health
 	stats.connect("no_health", queue_free)
+	# stats.connect("no_health", timer.stop())
 	# Run the animation tree (allows player to move)
 	animationTree.active = true
 	# (SUBJECT TO CHANGE):
