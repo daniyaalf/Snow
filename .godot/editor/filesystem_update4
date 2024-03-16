@@ -1,6 +1,7 @@
-res://World/world.tscn
+res://World/start.tscn
 res://World/reflection.gdshader
 res://Shaders/whiteColor.gdshader
+<<<<<<< Updated upstream
 res://World/visualsnow.gdshader
 res://World/camera.tscn
 res://Player/player.tscn
@@ -12,3 +13,8 @@ res://World/time_font.gd
 res://UI/time_font.gd
 res://UI/time_panel.gd
 res://Player/player.gd
+=======
+res://Shaders/visualsnow.gdshader
+res://World/world.gd
+res://World/world.tscn
+>>>>>>> Stashed changes
