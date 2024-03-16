@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://04d55t41tvw2"]
+
+[ext_resource type="Script" path="res://UI/time_panel.gd" id="1_fgxg2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etkse"]
+
+[sub_resource type="GDScript" id="GDScript_0u1sp"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	add_theme_font_size_override(\"font_size\", 10)
+	
+	pass # Replace with function body.
+"
+
+[node name="TimePanel" type="Panel"]
+offset_left = 240.0
+offset_right = 320.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_etkse")
+script = ExtResource("1_fgxg2")
+
+[node name="Minutes" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 48.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "00"
+script = SubResource("GDScript_0u1sp")
+
+[node name="Seconds" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 64.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "00:"
+script = SubResource("GDScript_0u1sp")
+
+[node name="Msecs" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 80.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "00"
+script = SubResource("GDScript_0u1sp")

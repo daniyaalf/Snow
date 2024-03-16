@@ -1,20 +1,10 @@
-res://World/start.tscn
-res://World/reflection.gdshader
-res://Shaders/whiteColor.gdshader
-<<<<<<< Updated upstream
-res://World/visualsnow.gdshader
-res://World/camera.tscn
-res://Player/player.tscn
-res://Enemies/bateye.tscn
-res://Player/player_stats.tscn
-res://Enemies/bat.tscn
-res://World/TimePanel.gd
-res://World/time_font.gd
-res://UI/time_font.gd
-res://UI/time_panel.gd
-res://Player/player.gd
-=======
-res://Shaders/visualsnow.gdshader
-res://World/world.gd
 res://World/world.tscn
->>>>>>> Stashed changes
+res://Shaders/whiteColor.gdshader
+res://Player/player.tscn
+res://UI/time_panel.tscn
+res://Stats/enemy_global_stats.tscn
+res://Stats/enemy_global_stats.gd
+res://Enemies/bat.gd
+res://UI/time_panel.gd
+res://Player/player_stats.tscn
+res://Enemies/bateye.tscn
