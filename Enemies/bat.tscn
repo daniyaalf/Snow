@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://cc6hlrago5xjg"]
 
-[ext_resource type="Script" path="res://Enemies/old_bat.gd" id="1_dgfpy"]
+[ext_resource type="Script" path="res://Enemies/bat.gd" id="1_v5c8o"]
 [ext_resource type="Shader" path="res://Shaders/whiteColor.gdshader" id="2_b8rvw"]
 [ext_resource type="Texture2D" uid="uid://86n27gb30ls6" path="res://Shadows/SmallShadow.png" id="2_u7tow"]
 [ext_resource type="PackedScene" uid="uid://dih7ugq16tyal" path="res://Overlap/hurtbox.tscn" id="3_amhpv"]
@@ -132,7 +132,7 @@ _data = {
 [node name="Bat" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 16
-script = ExtResource("1_dgfpy")
+script = ExtResource("1_v5c8o")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_t1owp")

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=27 format=3 uid="uid://0jwbonvid06d"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_7im2k"]
@@ -882,11 +883,15 @@ b = Vector2(0.000640869, 288)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xs6rt"]
 a = Vector2(0, -528)
+=======
+[gd_scene load_steps=2 format=3 uid="uid://0jwbonvid06d"]
+
+[ext_resource type="PackedScene" uid="uid://wh0dkgk0p77g" path="res://World/start.tscn" id="1_bvd6x"]
+>>>>>>> Stashed changes
 
 [node name="World" type="Node2D"]
-y_sort_enabled = true
-script = ExtResource("1_7im2k")
 
+<<<<<<< Updated upstream
 [node name="Camera2D" parent="." instance=ExtResource("2_10pvd")]
 position = Vector2(80, 72)
 zoom = Vector2(0.8, 0.8)
@@ -1207,3 +1212,6 @@ shape = SubResource("SegmentShape2D_xs6rt")
 
 [editable path="Camera2D"]
 [editable path="CanvasLayer/HealthUI"]
+=======
+[node name="Start" parent="." instance=ExtResource("1_bvd6x")]
+>>>>>>> Stashed changes

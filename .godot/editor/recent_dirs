@@ -1,7 +1,17 @@
+<<<<<<< Updated upstream
 res://UI
 res://Enemies
 res://
 res://Player
 res://World
+=======
+res://World
+res://Shaders
+res://Music and Sounds
+res://Enemies
+res://
+res://Player
+res://UI
+>>>>>>> Stashed changes
 res://Stats
 res://Effects

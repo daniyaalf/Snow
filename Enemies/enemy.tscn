@@ -1,0 +1,178 @@
+[gd_scene load_steps=14 format=3 uid="uid://0swq8evanvan"]
+
+[ext_resource type="Shader" path="res://Shaders/whiteColor.gdshader" id="2_fbwvw"]
+[ext_resource type="PackedScene" uid="uid://dih7ugq16tyal" path="res://Overlap/hurtbox.tscn" id="5_72l0m"]
+[ext_resource type="PackedScene" uid="uid://b7rmj3l2f2587" path="res://Stats/stats.tscn" id="6_4itwt"]
+[ext_resource type="PackedScene" uid="uid://2xm7dul65me0" path="res://Enemies/player_detection_zone.tscn" id="7_d8w28"]
+[ext_resource type="PackedScene" uid="uid://cmcldsch5tbxj" path="res://Overlap/hitbox.tscn" id="8_yeddf"]
+[ext_resource type="PackedScene" uid="uid://b267nkcyoidg6" path="res://Overlap/soft_collision.tscn" id="9_cyoto"]
+[ext_resource type="PackedScene" uid="uid://d15estedv21ca" path="res://Enemies/wander_controller.tscn" id="10_wwupx"]
+
+[sub_resource type="GDScript" id="GDScript_3bs8j"]
+script/source = "extends CharacterBody2D
+
+const EnemyDeathEffect = preload(\"res://Effects/enemy_death_effect.tscn\")
+const HitEffect = preload(\"res://Effects/hit_effect.tscn\")
+
+# Movement variables are export to change individual bats
+@export var ACCELERATION = 400
+@export var MAX_SPEED = 50
+@export var FRICTION = 40
+@export var SEPARATION = 400
+@export var KNOCKBACK = 140
+@export var invincibility_duration = 0.4
+
+@onready var sprite = $Sprite2D
+@onready var stats = $Stats
+@onready var playerDetectionZone = $PlayerDetectionZone
+@onready var hurtbox = $Hurtbox
+@onready var softCollision = $SoftCollision
+@onready var wanderController = $WanderController
+@onready var blinkAnimationPlayer = $BlinkAnimationPlayer
+
+func _ready():
+	pass
+
+func _physics_process(delta):
+	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	
+	# match state for movement types (see Bat for example)
+	
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * SEPARATION
+	move_and_slide()
+
+func accelerate_to(pos, delta):
+	var direction = global_position.direction_to(pos)
+	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+
+func adjust_sprite_direction():
+	sprite.flip_h = velocity.x < 0
+
+func _on_hurtbox_area_entered(area):
+	stats.health -= area.damage
+	velocity = area.knockback_vector * KNOCKBACK
+	hurtbox.create_hit_effect()
+	hurtbox.start_invincibility(invincibility_duration)
+
+func _on_stats_no_health():
+	queue_free()
+	var enemyDeathEffect = EnemyDeathEffect.instantiate()
+	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.position = position
+
+func _on_hurtbox_invincibility_started():
+	blinkAnimationPlayer.play(\"Start\")
+
+func _on_hurtbox_invincibility_ended():
+	blinkAnimationPlayer.play(\"Stop\")
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u538g"]
+resource_local_to_scene = true
+shader = ExtResource("2_fbwvw")
+shader_parameter/active = true
+
+[sub_resource type="Animation" id="Animation_ix5hu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tkuk8"]
+resource_name = "Start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00367769, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_albfc"]
+resource_name = "Stop"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nrw6"]
+_data = {
+"RESET": SubResource("Animation_ix5hu"),
+"Start": SubResource("Animation_tkuk8"),
+"Stop": SubResource("Animation_albfc")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
+script = SubResource("GDScript_3bs8j")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_u538g")
+animation = &""
+offset = Vector2(0, -12)
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Hurtbox" parent="." instance=ExtResource("5_72l0m")]
+collision_layer = 8
+collision_mask = 2
+HitEffect = null
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -13)
+
+[node name="Stats" parent="." instance=ExtResource("6_4itwt")]
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource("7_d8w28")]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+modulate = Color(1, 1, 1, 0.392157)
+
+[node name="Hitbox" parent="." instance=ExtResource("8_yeddf")]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -15)
+
+[node name="SoftCollision" parent="." instance=ExtResource("9_cyoto")]
+
+[node name="WanderController" parent="." instance=ExtResource("10_wwupx")]
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_7nrw6")
+}
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]
+[editable path="SoftCollision"]
+[editable path="WanderController"]
