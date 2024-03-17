@@ -1,10 +1,3 @@
 res://World/world.tscn
 res://Shaders/whiteColor.gdshader
-res://Player/player.tscn
-res://UI/time_panel.tscn
-res://Stats/enemy_global_stats.tscn
-res://Stats/enemy_global_stats.gd
-res://Enemies/bat.gd
-res://UI/time_panel.gd
-res://Player/player_stats.tscn
 res://Enemies/bateye.tscn

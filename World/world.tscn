@@ -888,7 +888,6 @@ position = Vector2(424, 328)
 z_index = -1
 texture_repeat = 2
 position = Vector2(60, 60)
-scale = Vector2(0.679105, 0.930556)
 texture = ExtResource("3_lxcfw")
 region_enabled = true
 region_rect = Rect2(-496, -256, 1072, 576)
