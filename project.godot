@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerStats="*res://Player/player_stats.tscn"
+EnemyGlobalStats="*res://Stats/enemy_global_stats.tscn"
 
 [debug]
 

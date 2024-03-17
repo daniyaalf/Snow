@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=27 format=3 uid="uid://0jwbonvid06d"]
+[gd_scene load_steps=25 format=3 uid="uid://0jwbonvid06d"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_7im2k"]
 [ext_resource type="PackedScene" uid="uid://cx3h7k4jbk3mw" path="res://World/camera.tscn" id="2_10pvd"]
@@ -11,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dxn2ue03lywy" path="res://Player/Light.png" id="7_0jb2f"]
 [ext_resource type="PackedScene" uid="uid://dj04xv4xiq4s4" path="res://World/bush.tscn" id="8_wcymg"]
 [ext_resource type="PackedScene" uid="uid://bescxd2h5qmvn" path="res://World/grass.tscn" id="9_xfptn"]
-[ext_resource type="PackedScene" uid="uid://bau3kwws4b2x1" path="res://Enemies/bateye.tscn" id="10_pbtbx"]
+[ext_resource type="PackedScene" uid="uid://bxj7inii33mst" path="res://Enemies/bateye.tscn" id="10_pbtbx"]
 [ext_resource type="PackedScene" uid="uid://d3sdcaul4l4tf" path="res://World/tree.tscn" id="11_7ladt"]
 [ext_resource type="PackedScene" uid="uid://bqk5jl1jlt126" path="res://UI/health_ui.tscn" id="12_mbc7s"]
-[ext_resource type="Script" path="res://UI/time_panel.gd" id="14_45mn8"]
+[ext_resource type="PackedScene" uid="uid://04d55t41tvw2" path="res://UI/time_panel.tscn" id="14_gj0yu"]
 [ext_resource type="Script" path="res://World/day_night_cycle.gd" id="14_xc810"]
 [ext_resource type="AudioStream" uid="uid://54gn07gutb60" path="res://Music and Sounds/Fantasy A.wav" id="15_e66do"]
 
@@ -863,35 +862,17 @@ terrain_set_0/terrain_0/name = "Cliff"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_3hbfc")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_etkse"]
-
-[sub_resource type="GDScript" id="GDScript_0u1sp"]
-script/source = "extends Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
-	add_theme_font_size_override(\"font_size\", 10)
-	
-	pass # Replace with function body.
-"
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_04g76"]
 a = Vector2(9.15527e-05, 40)
 b = Vector2(0.000640869, 288)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xs6rt"]
 a = Vector2(0, -528)
-=======
-[gd_scene load_steps=2 format=3 uid="uid://0jwbonvid06d"]
-
-[ext_resource type="PackedScene" uid="uid://wh0dkgk0p77g" path="res://World/start.tscn" id="1_bvd6x"]
->>>>>>> Stashed changes
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_7im2k")
 
-<<<<<<< Updated upstream
 [node name="Camera2D" parent="." instance=ExtResource("2_10pvd")]
 position = Vector2(80, 72)
 zoom = Vector2(0.8, 0.8)
@@ -907,7 +888,6 @@ position = Vector2(424, 328)
 z_index = -1
 texture_repeat = 2
 position = Vector2(60, 60)
-scale = Vector2(0.679105, 0.930556)
 texture = ExtResource("3_lxcfw")
 region_enabled = true
 region_rect = Rect2(-496, -256, 1072, 576)
@@ -1130,42 +1110,7 @@ offset_top = 1.0
 offset_right = 62.0
 offset_bottom = 12.0
 
-[node name="TimePanel" type="Panel" parent="CanvasLayer"]
-offset_left = 240.0
-offset_right = 320.0
-offset_bottom = 24.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_etkse")
-script = ExtResource("14_45mn8")
-
-[node name="Minutes" type="Label" parent="CanvasLayer/TimePanel"]
-layout_mode = 0
-offset_left = 24.0
-offset_right = 48.0
-offset_bottom = 26.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "00"
-script = SubResource("GDScript_0u1sp")
-
-[node name="Seconds" type="Label" parent="CanvasLayer/TimePanel"]
-layout_mode = 0
-offset_left = 40.0
-offset_right = 64.0
-offset_bottom = 26.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "00:"
-script = SubResource("GDScript_0u1sp")
-
-[node name="Msecs" type="Label" parent="CanvasLayer/TimePanel"]
-layout_mode = 0
-offset_left = 56.0
-offset_right = 80.0
-offset_bottom = 26.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "00"
-script = SubResource("GDScript_0u1sp")
+[node name="TimePanel" parent="CanvasLayer" instance=ExtResource("14_gj0yu")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_e66do")
@@ -1212,6 +1157,3 @@ shape = SubResource("SegmentShape2D_xs6rt")
 
 [editable path="Camera2D"]
 [editable path="CanvasLayer/HealthUI"]
-=======
-[node name="Start" parent="." instance=ExtResource("1_bvd6x")]
->>>>>>> Stashed changes

@@ -24,8 +24,14 @@ enum {
 @onready var blinkAnimationPlayer = $BlinkAnimationPlayer
 
 var state = CHASE
+var enemyGlobalStats = EnemyGlobalStats
 
 func _ready():
+	var positions = [[-176, -48], [-256, 208], [-112, 80], 
+	[80, -40], [80, -144], [176, 208], [344, 128], [-96, 208]]
+	var index = randi_range(0, 7)
+	position.x = positions[index][0]
+	position.y = positions[index][1]
 	sprite.play("Fly")
 	state = pick_random_state([IDLE, WANDER])
 	randomize() # Remove to have fixed seed
@@ -90,6 +96,7 @@ func _on_stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instantiate()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.position = position
+	enemyGlobalStats.enemy_died()
 
 func _on_hurtbox_invincibility_started():
 	blinkAnimationPlayer.play("Start")
