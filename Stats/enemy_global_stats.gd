@@ -9,3 +9,6 @@ func enemy_died():
 	num_enemies -= 1
 	if num_enemies <= 0:
 		emit_signal("no_enemies")
+
+func set_num_enemies(new_num_enemies):
+	num_enemies = new_num_enemies

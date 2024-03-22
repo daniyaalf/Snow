@@ -35,9 +35,6 @@ enum {
 @onready var swordHitbox = $HitboxPivot/SwordHitbox
 @onready var hurtbox = $Hurtbox
 @onready var blinkAnimationPlayer = $BlinkAnimationPlayer
-# @onready var timer = $TimePanel
-
-# NOTE: velocity is a built-in variable; Vector2.ZERO by default
 
 # DEFAULT SETTINGS
 var state = MOVE
@@ -47,7 +44,7 @@ var stats = PlayerStats
 # Upon game being run, these will always hold true
 func _ready():
 	# Remove the player from the world if they have no health
-	stats.connect("no_health", queue_free)
+	stats.connect("no_health", player_death)
 	# Run the animation tree (allows player to move)
 	animationTree.active = true
 	# (SUBJECT TO CHANGE):
@@ -55,6 +52,9 @@ func _ready():
 	# hitbox direction are fixed to go left on start, although any movement from the player
 	# and this no longer really matters because the hitbox directions will change correctly
 	swordHitbox.knockback_vector = roll_vector
+
+func player_death():
+	queue_free()
 
 # Controls behaviour of player
 func _physics_process(delta):

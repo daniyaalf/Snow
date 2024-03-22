@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://0jwbonvid06d"]
+[gd_scene load_steps=31 format=3 uid="uid://0jwbonvid06d"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_7im2k"]
 [ext_resource type="PackedScene" uid="uid://cx3h7k4jbk3mw" path="res://World/camera.tscn" id="2_10pvd"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://04d55t41tvw2" path="res://UI/time_panel.tscn" id="14_gj0yu"]
 [ext_resource type="Script" path="res://World/day_night_cycle.gd" id="14_xc810"]
 [ext_resource type="AudioStream" uid="uid://54gn07gutb60" path="res://Music and Sounds/Fantasy A.wav" id="15_e66do"]
+[ext_resource type="Texture2D" uid="uid://3i1x8lo807v7" path="res://restartgame.png" id="15_ipmxo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_34jrr"]
 shader = ExtResource("4_uvi2e")
@@ -862,6 +863,24 @@ terrain_set_0/terrain_0/name = "Cliff"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_3hbfc")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6sms"]
+content_margin_left = 1.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5w80u"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sp5d7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwj5o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7t57h"]
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_04g76"]
 a = Vector2(9.15527e-05, 40)
 b = Vector2(0.000640869, 288)
@@ -1112,6 +1131,21 @@ offset_bottom = 12.0
 
 [node name="TimePanel" parent="CanvasLayer" instance=ExtResource("14_gj0yu")]
 
+[node name="Game Over" type="Node2D" parent="CanvasLayer"]
+
+[node name="Restart" type="Button" parent="CanvasLayer/Game Over"]
+z_index = 2
+offset_left = 300.0
+offset_top = 160.0
+offset_right = 316.0
+offset_bottom = 178.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o6sms")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5w80u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sp5d7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dwj5o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7t57h")
+icon = ExtResource("15_ipmxo")
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_e66do")
 volume_db = 10.0
@@ -1153,6 +1187,7 @@ shape = SubResource("SegmentShape2D_xs6rt")
 position = Vector2(-304, 320)
 shape = SubResource("SegmentShape2D_xs6rt")
 
+[connection signal="pressed" from="CanvasLayer/Game Over/Restart" to="." method="_on_restart_pressed"]
 [connection signal="finished" from="BackgroundMusic" to="." method="_on_background_music_finished"]
 
 [editable path="Camera2D"]

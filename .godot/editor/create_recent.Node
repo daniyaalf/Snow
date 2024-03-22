@@ -1,3 +1,6 @@
+Sprite2D
+Button
+Node2D
 Panel
 Label
 CollisionShape2D
@@ -11,7 +14,6 @@ Camera2D
 CanvasModulate
 AudioStreamPlayer2D
 CharacterBody2D
-Node2D
 Node
 Marker2D
 AnimationPlayer
@@ -19,7 +21,6 @@ AudioStreamPlayer
 Timer
 CanvasLayer
 Area2D
-Sprite2D
 Control
 AnimatedSprite2D
 TileMap

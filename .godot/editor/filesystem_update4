@@ -1,3 +1,7 @@
 res://World/world.tscn
 res://Shaders/whiteColor.gdshader
 res://Enemies/bateye.tscn
+res://World/world.gd
+res://Player/player.tscn
+res://Player/player.gd
+res://Stats/enemy_global_stats.gd
