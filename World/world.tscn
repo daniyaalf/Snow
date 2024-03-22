@@ -882,8 +882,8 @@ content_margin_bottom = 1.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7t57h"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_04g76"]
-a = Vector2(9.15527e-05, 40)
-b = Vector2(0.000640869, 288)
+a = Vector2(-2, -0.999969)
+b = Vector2(-0.995422, 728)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xs6rt"]
 a = Vector2(0, -528)
@@ -1157,7 +1157,7 @@ script = ExtResource("14_xc810")
 [node name="TopRightBorder" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopRightBorder"]
-position = Vector2(136, -208)
+position = Vector2(-302, -209)
 rotation = -1.57079
 shape = SubResource("SegmentShape2D_04g76")
 
